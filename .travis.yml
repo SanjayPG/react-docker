@@ -7,7 +7,7 @@ services:
 
 #Series of action before run our test or deploy our project
 before_install:
-  - docker build -t sanjaygorai/react-docker -f Dockerfile.dev  
+  - docker build -t sanjaygorai/react-docker -f Dockerfile.dev .
 
 #Run our test script and exit
 script:
