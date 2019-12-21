@@ -1,0 +1,14 @@
+#To set a superuser like permission to execute the build
+sudo: required
+
+#Tell Travis we need a copy of docker running
+services:
+  - docker
+
+#Series of action before run our test or deploy our project
+before_install:
+  - docker build -t sanjaygorai/react-docker -f Dockerfile.dev  
+
+#Run our test script and exit
+script:
+  - docker run sanjaygorai/react-docker npm run test -- --coverage
