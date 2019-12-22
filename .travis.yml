@@ -1,20 +1,17 @@
 #To set a superuser like permission to execute the build
 sudo: required
 
-
 #Tell Travis we need a copy of docker running
 services:
   - docker
 
 #Series of action before run our tests or deploy our project
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.10.1
-  - export PATH=$HOME/.yarn/bin:$PATH
   - docker build -t sanjaygorai/react-docker -f Dockerfile.dev .
 
 #Run our test script and exit with code 0
-script:
-  - docker run sanjaygorai/react-docker npm run test  -- --coverage
+# script:
+#   - docker run sanjaygorai/react-docker npm run test  -- --coverage
  
 deploy:
   provider: elasticbeanstalk
