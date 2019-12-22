@@ -1,5 +1,6 @@
 #To set a superuser like permission to execute the build
 sudo: required
+install: travis_wait 15 mvn install
 
 #Tell Travis we need a copy of docker running
 services:
