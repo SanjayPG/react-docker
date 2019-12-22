@@ -8,6 +8,8 @@ services:
 
 #Series of action before run our tests or deploy our project
 before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.10.1
+  - export PATH=$HOME/.yarn/bin:$PATH
   - docker build -t sanjaygorai/react-docker -f Dockerfile.dev .
 
 #Run our test script and exit with code 0
