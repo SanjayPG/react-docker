@@ -11,7 +11,7 @@ before_install:
 
 ##Run our test script and exit with code 0
 script:
-  - docker run sanjaygorai/react-docker npm test -- --exit
+  - docker run -e CI=true sanjaygorai/react-docker npm run test
  
 deploy:
   provider: elasticbeanstalk
