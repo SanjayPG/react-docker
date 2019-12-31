@@ -10,8 +10,8 @@ before_install:
   - docker build -t sanjaygorai/react-docker -f Dockerfile.dev .
 
 ##Run our test script and exit with code 0
-script:
-  - docker run sanjaygorai/react-docker npm test -- --coverage
+#script:
+  #- docker run sanjaygorai/react-docker npm test -- --coverage
  
 deploy:
   provider: elasticbeanstalk
