@@ -5,13 +5,13 @@ sudo: required
 services:
   - docker
 
-#Series of action before run our tests or deploy our project
+##Series of action before run our tests or deploy our project
 before_install:
   - docker build -t sanjaygorai/react-docker -f Dockerfile.dev .
 
 ##Run our test script and exit with code 0
 script:
-  - docker run sanjaygorai/react-docker npm test -- --coverage
+  - docker run -e CI=true sanjaygorai/react-docker npm run test
  
 deploy:
   provider: elasticbeanstalk
