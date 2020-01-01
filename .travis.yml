@@ -1,7 +1,7 @@
 #To set a superuser like permission to execute the build
 sudo: required
 
-#Tell Travis we need a copy of docker running
+##Tell Travis we need a copy of docker running
 services:
   - docker
 
